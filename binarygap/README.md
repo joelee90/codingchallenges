@@ -1,5 +1,6 @@
-Source:
- https://app.codility.com/programmers/lessons/1-iterations/
+## Binary Gap
+
+Source: https://app.codility.com/programmers/lessons/1-iterations/
 
  Find the length of the longest binary gap between 1s and retun 0 if N doesn't contain any.
 
@@ -10,28 +11,28 @@ Source:
      if N === 0 count
      if N === 1 stop count
 
-`
+```
 if (i === "0") {
-  zeroCount += 1;
+    zeroCount += 1;
 } else {
   result = Math.max(result, zeroCount);
   zeroCount = 0;
 }
-`
+```
 
-Count two variables:
+* Count two variables:
     zeroCount: Number of zeros,
     result: result of zeroCount
 
-Loop through the array and count number of '0'.
+* Loop through the array and count number of '0'.
 If i === '1', compare the result and zeroCount, return the max value and set it to the value of result and set zeroCount to '0'.
 
-Basic logic: Count the number of '0' and stop when reaches to '1',
+* Basic logic: Count the number of '0' and stop when reaches to '1',
 and take that count of '0' and set it to the result variable.
 
-So this happens when the next zeroCount is larger than the previous zeros, and overwrites the current zeroCount with the new zeroCount.
+* So this happens when the next zeroCount is larger than the previous zeros, and overwrites the current zeroCount with the new zeroCount.
 Thus, only returns the largest binary gap within the array.
 
-First result will start with 0, but will vary depending on its way to counting zeros. The largest binary gap will always will be returned.
+* First result will start with 0, but will vary depending on its way to counting zeros. The largest binary gap will always will be returned.
 
-*Focusing on finding the largerst binary gap
+* Focusing on finding the largerst binary gap
