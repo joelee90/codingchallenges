@@ -2,7 +2,7 @@
 
 Source: https://app.codility.com/programmers/lessons/1-iterations/
 
- Find the length of the longest binary gap between 1s and retun 0 if N doesn't contain any.
+ Find the length of the longest binary gap between 1s and return 0 if N doesn't contain any.
 
  1. Convert integer into binary STRING.
  2. Access the STRING, use split() to access each integer.
