@@ -222,3 +222,5 @@ function DNAStrand(dna){
     return d.join('');
 }
 DNAStrand("ATTGC")
+
+// --------
