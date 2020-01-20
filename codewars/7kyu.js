@@ -1,4 +1,4 @@
-----Santa's Naughty List----
+----------------Santa's Naughty List----------------
 
 let finalList = [];
  for (let i = 0; i < santasList.length; i++) {
@@ -35,9 +35,10 @@ function findChildren(santasList, children) {
 // Create a new list of kids receiving the gift.
 // Want to return where [child = santaList] and sort them.
 
-----Get the Middle Character----
+----------------Get the Middle Character----------------
 
-//1번째 방법
+---1번째 방법---
+
 function getMiddle(s) {
     let position;
     let length;
@@ -55,7 +56,8 @@ function getMiddle(s) {
 }
 getMiddle('test');
 
-// 2번째 방법
+---2번째 방법---
+
 function getMiddle(s)
 {
     let init = Math.ceil(s.length / 2) - 1;
@@ -63,11 +65,14 @@ function getMiddle(s)
     return s.subtring(init, end);
 }
 
-//3번째 방법
+---3번째 방법---
+
 return s.substring(Math.ceil(s.length / 2) - 1, Math.floor(s.length / 2) + 1);
 
-----Breaking chocolate problem----
-//1번째 방법
+----------------Breaking chocolate problem----------------
+
+---1번째 방법---
+
 function breakChocolate(n,m) {
     if(n > 0 && m > 0) {
         return n * m - 1;
@@ -76,28 +81,34 @@ function breakChocolate(n,m) {
 
 n, m이 0이면 -1을 리턴하기 때문에 조건부여
 
-//2번째 방법
+---2번째 방법---
+
 function breakChocolate(n,m) {
     return (n * m === 0) ? 0 : n * m - 1;
 }
 
-----Summing a number's digits----
-// 1번째 방법
+----------------Summing a number's digits----------------
+
+---1번째 방법---
+
 function sumDigits(number) {
     let absolute = Math.abs(number);
     let sum = [...absolute+''].map(i => +i).reduce((a,b) => a + b);
     return sum;
 }
 
-//2번째 방법
+---2번째 방법---
+
 function sumDigits(number) {
     let a = Math.abs(number).toString().split('').map(i => +i).reduce((a,b) => a + b);
     return a;
     console.log(a);
 }
 
-----Shortest Word----
-//1번째 방법
+----------------Shortest Word----------------
+
+---1번째 방법---
+
 function findShort(s){
     let short = s.split(' ').sort((a,b) => a.length - b.length);
     console.log(short[0].length);
@@ -106,13 +117,16 @@ function findShort(s){
 
 findShort("bitcoin take over the world maybe who knows perhaps");
 
-//2번째 방법
+---2번째 방법---
+
 function findShort(s) {
     return Math.min(...s.split(' ').map(i => i.length));
 }
 
-----Mumbling----
-//1번째 방법
+----------------Mumbling----------------
+
+---1번째 방법---
+
 function accum(s) {
 	let sen = s.split('');
     for(let i = 0; i < sen.length; i++) {
@@ -122,7 +136,8 @@ function accum(s) {
 }
 accum("abcd");
 
-//2번째 방법
+---2번째 방법---
+
 function accum(s) {
 	let sen = s.split('').map((c,i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');
     console.log(sen);
@@ -130,7 +145,8 @@ function accum(s) {
 }
 accum("abcd");
 
-----Vowels Count----
+----------------Vowels Count----------------
+
 var vowelsCount = 0;
 let vowels = 'aeiou';
 for(let i=0; i < str.length; i++) {
@@ -141,7 +157,8 @@ for(let i=0; i < str.length; i++) {
 console.log(vowelsCount);
 return vowelsCount;
 
-----Descending Order----
+----------------Descending Order----------------
+
 function descendingOrder(n){
 let a = n.toString().split('').sort((a,b) => b-a).join('');
 console.log(a);
@@ -151,7 +168,8 @@ return b;
 }
 descendingOrder(123456789);
 
-----high and low----
+----------------high and low----------------
+
 function highAndLow(numbers){
   let result = '';
   let arr = numbers.split(' ').sort((a,b) => a-b);
@@ -160,7 +178,8 @@ function highAndLow(numbers){
 }
 highAndLow("4 5 29 54 4 0 -214 542 -64 1 -3 6 -6")
 
-----Square Every Digit----
+----------------Square Every Digit----------------
+
 function squareDigits(num){
   console.log(num.toString().split(''));
   let a = num.toString().split('');
@@ -171,8 +190,10 @@ function squareDigits(num){
 }
 squareDigits(9119)
 
-----Exes and Ohs----
-//1번째
+----------------Exes and Ohs----------------
+
+---1번째---
+
 function XO(str) {
     let x = 0;
     let o = 0;
@@ -193,12 +214,14 @@ XO("xxOo")
  // else will return false. The idea is to count no of x and o
  // and compare to see if they have same count number.
 
-//2번째
+---2번째---
+
 function XO(str) {
     return str.toLowerCase().split('x').length === str.toLowerCase().split('o').length;
 }
 
-----Complimentary DNA----
+----------------Complimentary DNA----------------
+
 function DNAStrand(dna){
     let d = [];
     let a = dna.split('');
@@ -223,8 +246,10 @@ function DNAStrand(dna){
 }
 DNAStrand("ATTGC")
 
-----Odd or Even?----
-1st trial
+----------------Odd or Even?----------------
+
+---1st solution---
+
 function oddOrEven(array) {
     if(array.length == 0) {
         return 'even';
@@ -233,4 +258,10 @@ function oddOrEven(array) {
     if(check % 2 === 0) {
         return 'even';
     } else return 'odd';
+}
+
+---2nd solution---
+
+function oddOrEven(array) {
+    return array.reduce((a,b) => a+b, 0) % 2 === 0 ? 'even' : 'odd';
 }
