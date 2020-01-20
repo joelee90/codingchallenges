@@ -223,4 +223,14 @@ function DNAStrand(dna){
 }
 DNAStrand("ATTGC")
 
-// --------
+----Odd or Even?----
+1st trial
+function oddOrEven(array) {
+    if(array.length == 0) {
+        return 'even';
+    }
+    let check = array.reduce((a,b) => a+b);
+    if(check % 2 === 0) {
+        return 'even';
+    } else return 'odd';
+}
