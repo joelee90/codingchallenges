@@ -265,3 +265,42 @@ function oddOrEven(array) {
 function oddOrEven(array) {
     return array.reduce((a,b) => a+b, 0) % 2 === 0 ? 'even' : 'odd';
 }
+
+----------------You're a square!----------------
+
+---1st trial---
+
+var isSquare = function(n){
+    if(n < 0) {
+        return false;
+    }
+    let sq = Math.sqrt(n);
+    if(n === sq*sq) {
+        return true;
+    } else return false;
+}
+
+random number test case 통과하지 못함
+
+---2nd trial---
+
+var isSquare = function(n){
+    if(n < 0) { return false };
+    return Math.sqrt(n) % 1 === 0 ? true : false;
+}
+
+* n의 sqrt를 % 1 하였을때, 0이 나와야 됨. 소수는 0이 나오지 않음.
+sqrt 한값이 자기 자신으로 나누었을때는 0이 나와야된다. 만약 소수라면 0이 나오지 않기 때문에 정사각형 조건에 맞지 않음.
+
+----------------Disemvowels Trolls----------------
+
+---1st trial---
+
+function disemvowel(str) {
+    let vowels = 'aeiou';
+    return str.split('').filter(i => {
+        if(vowels.indexOf(i.toLowerCase()) == -1) {
+            return i;
+        }
+    }).join('');
+}
