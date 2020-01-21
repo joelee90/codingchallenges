@@ -304,3 +304,21 @@ function disemvowel(str) {
         }
     }).join('');
 }
+
+
+----------------Jaden Casing Strings----------------
+
+---1st trial---
+
+String.prototype.toJadenCase = function (str) {
+  return this.split(' ').map(i => i[0].toUpperCase() + i.slice(1)).join(' ');
+};
+
+
+---break down---
+
+let a = str.split(' ');
+let b = a.map(i => i[0].toUpperCase() + i.slice(1));
+let c = b.join(' ');
+
+//use 'this' keyword for prototype
