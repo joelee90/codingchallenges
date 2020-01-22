@@ -322,3 +322,15 @@ let b = a.map(i => i[0].toUpperCase() + i.slice(1));
 let c = b.join(' ');
 
 //use 'this' keyword for prototype
+
+----------------Isograms----------------
+
+---1st trial---
+
+var i, j;
+ str = str.toLowerCase();
+ for(i = 0; i < str.length; ++i)
+   for(j = i + 1; j < str.length; ++j)
+     if(str[i] === str[j])
+       return false;
+ return true;
