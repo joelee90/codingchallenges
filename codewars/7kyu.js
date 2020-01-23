@@ -327,10 +327,10 @@ let c = b.join(' ');
 
 ---1st trial---
 
-var i, j;
- str = str.toLowerCase();
- for(i = 0; i < str.length; ++i)
-   for(j = i + 1; j < str.length; ++j)
-     if(str[i] === str[j])
-       return false;
- return true;
+function isIsogram(str){
+  return new Set(str.toUpperCase()).size == str.length;
+}
+
+1. new Set : stores unique values of any type.
+2. Compare the size of the new Set to the length of the original str.
+3. Returns true only if the length of both strings are equal, else will return false.
