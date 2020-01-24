@@ -334,3 +334,26 @@ function isIsogram(str){
 1. new Set : stores unique values of any type.
 2. Compare the size of the new Set to the length of the original str.
 3. Returns true only if the length of both strings are equal, else will return false.
+
+----------------Beginner Series#3 Sum of Numbers----------------
+
+
+function getSum(a, b) {
+
+    let max = Math.max(a, b);
+    let min = Math.min(a, b);
+
+    if(max == min) {
+        return max;
+    }
+    let arrange = [];
+    for(let i = min; i <= max; i++) {
+        arrange.push(i);
+    }
+    return arrange.reduce((a, b) => a + b);
+}
+
+console.log(getSum(-1, 0));
+
+// Sort a, b using Math.max, Math.min
+// Loop and list all the numbers between and get the sum of the list.
