@@ -357,3 +357,32 @@ console.log(getSum(-1, 0));
 
 // Sort a, b using Math.max, Math.min
 // Loop and list all the numbers between and get the sum of the list.
+
+
+----------------Growth of a Population----------------
+
+---1st trial---
+
+function nbYear(p0, percent, aug, p) {
+    let per = percent / 100;
+    let year = 0;
+    let result = 0;
+
+    if(p0 <= p) {
+        result = p0 + (p0*per) + aug;
+        return result;
+        year++;
+    }
+}
+
+---1st solution---
+
+function nbYear(p0, percent, aug, p) {
+    let per = percent / 100;
+    let y = 0;
+    while(p0 < p) {
+        p0 = p0 + (p0*per) + aug;
+        y++;
+    }
+    return y;
+}
