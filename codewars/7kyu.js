@@ -386,3 +386,29 @@ function nbYear(p0, percent, aug, p) {
     }
     return y;
 }
+
+----------------Two to One----------------
+
+---1st solution---
+
+function longest(s1, s2) {
+    let a = s1.concat(s2);
+    let b = a.split('').sort();
+    let c = b.filter((element, index, array) => {
+        return index === array.indexOf(element);
+    })
+    let d = c.join('');
+    return d;
+}
+
+---Modified---
+
+function longest(s1, s2) {
+    return s1.concat(s2).split('').sort().filter((element, index, array) => {
+        return index === array.indexOf(element);
+    }).join('');
+}
+
+or
+
+return element !== array[index - 1];
