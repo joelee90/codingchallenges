@@ -412,3 +412,13 @@ function longest(s1, s2) {
 or
 
 return element !== array[index - 1];
+
+----------------Sum of two lowest positive integers----------------
+
+---1st solution---
+
+function sumTwoSmallestNumbers(numbers) {
+  let a = numbers.sort((a, b) => a - b);
+  total = a[0] + a[1];
+  return total;
+}
