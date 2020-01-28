@@ -422,3 +422,78 @@ function sumTwoSmallestNumbers(numbers) {
   total = a[0] + a[1];
   return total;
 }
+
+----------------List Filtering----------------
+
+---1st solution---
+
+function filter_list(l) {
+  let nums = [];
+  for(let i = 0; i < l.length; i++) {
+      if(typeof l[i] === 'number') {
+          nums.push(l[i]);
+      }
+  }
+  return nums;
+}
+
+----------------Print Errors----------------
+
+---1st solution---
+
+function printerError(s) {
+    let ink = 'abcdefghijklm';
+    let res = s.split('').filter(i => {
+        if(ink.indexOf(i) === -1) {
+            return i;
+            }
+        }).join('')
+    return res.length + '/' + s.length;
+}
+
+---2nd solution---
+
+function printerError(s) {
+    let count = 0;
+    for(let i = 0; i < s.length; i++) {
+        if(s[i] > 'm') {
+            count++;
+        }
+    }
+    return count + "/" + s.length;
+}
+
+----------------Find the nexs perfect square!----------------
+
+---1st solution---
+
+function findNextSquare(sq) {
+    return Math.sqrt(sq) % 1 === 0 ?  (Math.sqrt(sq)+1) * (Math.sqrt(sq)+1) : -1;
+}
+
+----------------Sum of odd numbers----------------
+
+function rowSumOddNumbers(n) {
+  return n*n*n;
+}
+
+----------------Credit Card Mask----------------
+
+---1st trial---
+
+function maskify(cc) {
+    let end = cc.length - 4;
+    let b = cc.split('').splice(end, 4).join('');
+    return '#'.repeat(end)) + b;
+}
+
+---1st solution---
+
+function maskify(cc) {
+    cc = cc.split('');
+    for(let i = 0; i < cc.length - 4; i++) {
+        cc[i] = '#'
+    }
+    cc = cc.join('');
+    return cc;
+}
