@@ -497,3 +497,75 @@ function maskify(cc) {
     cc = cc.join('');
     return cc;
 }
+
+----------------Categorize New Number----------------
+
+---1st solution---
+
+function openOrSenior(data){
+    let res = [];
+    for(let i = 0; i < data.length; i++) {
+        if(data[i][0] >= 55 && data[i][1] > 7) {
+            res.push('Senior');
+        } else {
+            res.push('Open');
+        }
+    }
+    return res;
+}
+
+----------------Number of People in the Bus----------------
+
+---1st solution---
+
+var number = function(busStops){
+    let getIn = [];
+    let getOut = [];
+
+    busStops.forEach(i => {
+        getIn.push(i[0])
+        getOut.push(i[1]);
+    })
+    let a = getIn.reduce((a,b) => a + b);
+    let b = getOut.reduce((a,b) => a + b)
+    return a - b;
+}
+
+---2nd solution---
+
+var number = function(busStops){
+    let total = 0;
+    busStops.forEach(i => {
+        total += i[0]
+        total -= i[1];
+    })
+    return total;
+}
+
+----------------Find the Divisor!----------------
+
+---1st solution---
+
+function divisors(integer) {
+  let arr = [];
+  for(let i = 2; i < integer; i++) {
+      if(integer % i === 0) {
+          arr.push(i);
+      }
+  }
+  return arr.length ? arr : integer + ' is prime';
+};
+
+----------------Friends of Foe?----------------
+
+function friend(friends){
+    let arr = [];
+    for(let i = 0; i < friends.length; i++) {
+      if(friends[i].length === 4) {
+          arr.push(friends[i]);
+      }
+  }
+  return arr;
+}
+
+----------------End of 7kyu----------------
