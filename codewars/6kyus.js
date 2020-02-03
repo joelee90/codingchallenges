@@ -42,3 +42,14 @@ function persistence(num) {
         }
     return count;
 }
+
+----------------Sum of Digits / Digital Root----------------
+
+function digital_root(n) {
+  n = n.toString();
+  if(n.length < 2) {
+    return Number(n);
+  }
+  n = n.split('').map(Number).reduce((a,b) => a+b).toString();
+  return digital_root(n);
+}
