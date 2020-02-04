@@ -50,6 +50,14 @@ function digital_root(n) {
   if(n.length < 2) {
     return Number(n);
   }
-  n = n.split('').map(Number).reduce((a,b) => a+b).toString();
+  n = n.split('').map(Number).reduce((a,b) => a + b).toString();
   return digital_root(n);
+}
+
+----------------Counting Duplicates----------------
+
+function duplicateCount(text){
+  return text.toLowerCase().split('').filter(function(val, i, arr){
+    return arr.indexOf(val) !== i && arr.lastIndexOf(val) === i;
+  }).length;
 }
