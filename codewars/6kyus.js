@@ -92,3 +92,36 @@ function likes(names) {
        return names[0] + ', ' + names[1] + ' ' + 'and' + ' ' + (names.length - 2) + ' ' + 'others like this';
     }
 }
+
+----------------Find The Parity Outlier----------------
+
+---1st trial---
+
+function findOutlier(integers){
+    let checkIfOddorEven = integers.map(i => Math.abs(i)).reduce((a, b) => a + b);
+    if(checkIfOddorEven % 2 == 0) {
+        for(let i = 0; i < integers.length; i++) {
+              if(integers[i] % 2 == 0) {
+                  return integers[i];
+              }
+        }
+    } else {
+        for(let i = 0; i < integers.length; i++) {
+              if(integers[i] % 2 == 1 || integers[i] % 2 == -1) {
+                  return integers[i];
+              }
+        }
+    }
+}
+
+Test fail case :
+findOutlier([-82010241,-163671247,35286631,-93544850,53587775,176351581,-91783419,-89968295,79555935,-56064977,-180314547,73507693,-145944761,-675393,-89875597,-131754441,188553411,56810385,82769303,128945197,85789511,11626917,-135186259,-194719963,74065361,-180944031,39484609,148358177,15851011,-29065845,-190390725,157882683,147602511,90986669])
+
+
+---2nd trial---
+
+function findOutlier(integers){
+    let even = integers.filter(i => i % 2 === 0);
+    let odd = integers.filter(i => i % 2 === 1 || i % 2 === -1);
+    return even.length === 1 ? Number(even) : Number(odd);
+}
