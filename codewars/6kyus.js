@@ -125,3 +125,41 @@ function findOutlier(integers){
     let odd = integers.filter(i => i % 2 === 1 || i % 2 === -1);
     return even.length === 1 ? Number(even) : Number(odd);
 }
+
+
+----------------Break camelCase----------------
+
+---1st trial---
+
+function solution(string) {
+  let arr = [];
+  for (let i = 0; i < string.length; i++) {
+    if (string.charAt(i) === string.charAt(i).toUpperCase()) {
+      arr.push(string.charAt(i));
+    }
+  }
+  return arr;
+}
+
+solution("camelCasingTest");
+
+After I found out the uppercase letters within the string, I didn't know how to
+proceed to the next step.
+
+---solution---
+
+function solution(string) {
+  str = string.split("");
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === str[i].toUpperCase()) {
+      str[i] = " " + str[i];
+    }
+  }
+  return str.join("");
+}
+
+Split the string, and loop through to find the uppercase letters.
+Add space in front of the uppercase letters and assign them to str[i].
+Finally return str, which will have str[i] of spaces added to the uppercase.
+It is not supposed to be complicated, but rather requires more experience logical thinking
+to solve the problem.
