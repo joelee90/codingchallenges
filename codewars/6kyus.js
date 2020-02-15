@@ -163,3 +163,25 @@ Add space in front of the uppercase letters and assign them to str[i].
 Finally return str, which will have str[i] of spaces added to the uppercase.
 It is not supposed to be complicated, but rather requires more experience logical thinking
 to solve the problem.
+
+----------------Stop gninnipS My sdroW!----------------
+
+---1st trial---
+
+function spinWords(str){
+  str = str.split(' ');
+  for(let i=0; i<str.length; i++) {
+      if(str[i].length > 5) {
+          str[i] = str[i].split('').reverse().join('');
+      }
+  }
+  return str.join(' ');
+}
+
+---2nd solution---
+
+function spinWords(str){
+    str.split(' ').map(word => {
+        return (word.length > 4) ? word.split('').revers().join('') : word;
+    }).join(' ');
+}
