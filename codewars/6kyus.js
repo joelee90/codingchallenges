@@ -185,3 +185,30 @@ function spinWords(str){
         return (word.length > 4) ? word.split('').revers().join('') : word;
     }).join(' ');
 }
+
+----------------Take a Ten Minute Walk----------------
+
+function isValidWalk(walk) {
+  if (walk.length == 10) {
+    let n = [];
+    let s = [];
+    let e = [];
+    let w = [];
+
+    walk.forEach(i => {
+      if (i === "n") {
+        n.push(i);
+      } else if (i === "s") {
+        s.push(i);
+      } else if (i === "e") {
+        e.push(i);
+      } else if (i === "w") {
+        w.push(i);
+      }
+    });
+
+    if (n.length === s.length && e.length === w.length) {
+      return true;
+    } else false;
+  } else return false;
+}
